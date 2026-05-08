@@ -7,8 +7,52 @@
     <meta name="keywords" content="laundry service, dry cleaning, laundry Kampala, pickup delivery">
     <meta name="theme-color" content="#0066CC">
     <title>Clean Slate Laundry - Fresh, Fast & Reliable Services</title>
-    <link rel="stylesheet" href="/styles.css">
+    <link rel="stylesheet" href="/styles.css?v=20260508">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        img {
+            display: block;
+            max-width: 100%;
+        }
+
+        .hero-slider,
+        .image-placeholder,
+        .gallery-image,
+        .about-image,
+        .comparison-slider,
+        .comparison-img {
+            overflow: hidden;
+        }
+
+        .hero-slider {
+            position: relative;
+            min-height: 320px;
+            border-radius: 16px;
+            background: linear-gradient(160deg, rgba(0, 102, 204, 0.16), rgba(0, 163, 224, 0.08));
+        }
+
+        .hero-slide {
+            position: absolute;
+            inset: 0;
+            opacity: 0;
+            transition: opacity 0.6s ease;
+        }
+
+        .hero-slide.active,
+        .hero-slide.render-fallback-active {
+            opacity: 1;
+            z-index: 1;
+        }
+
+        .hero-slide img,
+        .gallery-image img,
+        .comparison-img img,
+        .about-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+    </style>
     <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><circle cx='50' cy='50' r='50' fill='%230066CC'/><text x='50' y='60' text-anchor='middle' font-size='60' fill='white' font-weight='bold'>C</text></svg>">
 </head>
 <body>
@@ -155,7 +199,7 @@
                 </div>
                 <div class="gallery-item">
                     <div class="gallery-image">
-                        <img src="/image/ex folding.jpg" alt="Expert folding of freshly cleaned clothes" style="width: 100%; height: 100%; object-fit: cover;">
+                        <img src="/image/ex-folding.jpg" alt="Expert folding of freshly cleaned clothes" style="width: 100%; height: 100%; object-fit: cover;">
                         <div style="padding: 1rem; text-align: center; font-weight: 600; color: var(--dark-gray); background: var(--light-gray);">Expert Folding</div>
                     </div>
                 </div>
@@ -876,6 +920,54 @@
         <i class="fab fa-whatsapp" aria-hidden="true"></i>
     </a>
 
-    <script src="/script.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            window.setTimeout(function () {
+                if (window.cleanSlateHeroSliderReady) {
+                    return;
+                }
+
+                const slides = Array.from(document.querySelectorAll('.hero-slide'));
+                const dots = Array.from(document.querySelectorAll('.hero-slider-dot'));
+                const caption = document.getElementById('heroSliderCaption');
+                let currentIndex = 0;
+
+                if (!slides.length) {
+                    return;
+                }
+
+                function showFallbackSlide(index) {
+                    currentIndex = index;
+
+                    slides.forEach((slide, slideIndex) => {
+                        const isActive = slideIndex === index;
+                        slide.classList.toggle('render-fallback-active', isActive);
+                        slide.style.opacity = isActive ? '1' : '0';
+                        slide.style.zIndex = isActive ? '1' : '0';
+                    });
+
+                    dots.forEach((dot, dotIndex) => {
+                        dot.classList.toggle('active', dotIndex === index);
+                    });
+
+                    if (caption) {
+                        caption.textContent = slides[index].dataset.caption || '';
+                    }
+                }
+
+                dots.forEach((dot, index) => {
+                    dot.addEventListener('click', function () {
+                        showFallbackSlide(index);
+                    });
+                });
+
+                showFallbackSlide(0);
+                window.setInterval(function () {
+                    showFallbackSlide((currentIndex + 1) % slides.length);
+                }, 3800);
+            }, 600);
+        });
+    </script>
+    <script src="/script.js?v=20260508"></script>
 </body>
 </html>

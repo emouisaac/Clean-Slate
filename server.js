@@ -6,6 +6,8 @@ const os = require('os');
 const PORT = process.env.PORT || 3000;
 const ROOT_DIR = __dirname;
 const INDEX_FILE = path.join(ROOT_DIR, 'index.html');
+const STYLES_FILE = path.join(ROOT_DIR, 'styles.css');
+const SCRIPT_FILE = path.join(ROOT_DIR, 'script.js');
 
 const MIME_TYPES = {
     '.html': 'text/html; charset=UTF-8',
@@ -54,9 +56,50 @@ function sendFile(filePath, response) {
         const ext = path.extname(filePath).toLowerCase();
         response.writeHead(200, {
             'Content-Type': MIME_TYPES[ext] || 'application/octet-stream',
-            'Cache-Control': ext === '.html' ? 'no-cache' : 'public, max-age=3600'
+            'Cache-Control': ['.html', '.css', '.js'].includes(ext) ? 'no-cache' : 'public, max-age=3600'
         });
         response.end(content);
+    });
+}
+
+function inlinePageAssets(html, styles, script) {
+    const styleTagPattern = /<link rel="stylesheet" href="\/styles\.css(?:\?[^"]*)?">\s*/i;
+    const scriptTagPattern = /<script src="\/script\.js(?:\?[^"]*)?"><\/script>\s*/i;
+
+    return html
+        .replace(styleTagPattern, `<style>\n${styles}\n</style>\n`)
+        .replace(scriptTagPattern, `<script>\n${script}\n</script>\n`);
+}
+
+function sendIndex(response) {
+    fs.readFile(INDEX_FILE, 'utf8', (htmlError, html) => {
+        if (htmlError) {
+            response.writeHead(500, { 'Content-Type': 'text/plain; charset=UTF-8' });
+            response.end('500 Internal Server Error');
+            return;
+        }
+
+        fs.readFile(STYLES_FILE, 'utf8', (stylesError, styles) => {
+            if (stylesError) {
+                response.writeHead(500, { 'Content-Type': 'text/plain; charset=UTF-8' });
+                response.end('500 Internal Server Error');
+                return;
+            }
+
+            fs.readFile(SCRIPT_FILE, 'utf8', (scriptError, script) => {
+                if (scriptError) {
+                    response.writeHead(500, { 'Content-Type': 'text/plain; charset=UTF-8' });
+                    response.end('500 Internal Server Error');
+                    return;
+                }
+
+                response.writeHead(200, {
+                    'Content-Type': 'text/html; charset=UTF-8',
+                    'Cache-Control': 'no-cache'
+                });
+                response.end(inlinePageAssets(html, styles, script));
+            });
+        });
     });
 }
 
@@ -82,6 +125,11 @@ const server = http.createServer((request, response) => {
 
         fs.access(filePath, fs.constants.F_OK, accessError => {
             if (!accessError) {
+                if (path.resolve(filePath) === path.resolve(INDEX_FILE)) {
+                    sendIndex(response);
+                    return;
+                }
+
                 sendFile(filePath, response);
                 return;
             }
@@ -93,7 +141,7 @@ const server = http.createServer((request, response) => {
             }
 
             // Fallback for client-side navigation and unmatched routes.
-            sendFile(INDEX_FILE, response);
+            sendIndex(response);
         });
     });
 });

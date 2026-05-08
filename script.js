@@ -2,6 +2,10 @@
 // CLEAN SLATE LAUNDRY - JAVASCRIPT
 // ============================================
 
+window.cleanSlateRuntime = {
+    loaded: true
+};
+
 const controlledSectionSelectors = [
     '#services',
     '#pricing',
@@ -363,6 +367,7 @@ if (heroSlides.length) {
 
     setHeroSlide(0);
     startHeroSlider();
+    window.cleanSlateHeroSliderReady = true;
 }
 
 // Smooth scroll is now handled by the section navigation system above
