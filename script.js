@@ -171,7 +171,7 @@ if (quoteBtn) {
         
         if (phone && service) {
             const whatsappMsg = `Hello Clean Slate! I'd like to get a quote for ${service} service. My number is ${phone}`;
-            window.open(`https://wa.me/256700000000?text=${encodeURIComponent(whatsappMsg)}`, '_blank');
+            window.open(`https://wa.me/256787673188?text=${encodeURIComponent(whatsappMsg)}`, '_blank');
         } else {
             alert('Please fill in phone number and service type first');
         }
@@ -478,7 +478,7 @@ areaItems.forEach(item => {
 });
 
 // WhatsApp number configuration
-const whatsappNumber = '256700000000'; // Format: country code + number without +
+const whatsappNumber = '256787673188'; // Format: country code + number without +
 
 // Update all WhatsApp links with the business number
 document.querySelectorAll('[href*="wa.me"]').forEach(link => {

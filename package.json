@@ -1,0 +1,10 @@
+{
+  "name": "clean-slate",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Clean Slate Laundry static site",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  }
+}
