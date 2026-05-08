@@ -1,0 +1,854 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Clean Slate Laundry - Professional washing, dry cleaning, and doorstep delivery services in Kampala, Uganda">
+    <meta name="keywords" content="laundry service, dry cleaning, laundry Kampala, pickup delivery">
+    <meta name="theme-color" content="#0066CC">
+    <title>Clean Slate Laundry - Fresh, Fast & Reliable Services</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><circle cx='50' cy='50' r='50' fill='%230066CC'/><text x='50' y='60' text-anchor='middle' font-size='60' fill='white' font-weight='bold'>C</text></svg>">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-content">
+                <div class="logo">
+                    <svg width="32" height="32" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <circle cx="50" cy="50" r="45" fill="#0066CC" opacity="0.1" stroke="#0066CC" stroke-width="2"/>
+                        <path d="M30 50C30 38 38 30 50 30C62 30 70 38 70 50" stroke="#0066CC" stroke-width="3" fill="none" stroke-linecap="round"/>
+                        <circle cx="50" cy="65" r="4" fill="#0066CC"/>
+                    </svg>
+                    <span>Clean Slate</span>
+                </div>
+                <div class="nav-links" id="navLinks">
+                    <a href="#home" class="nav-link active">Home</a>
+                    <a href="#services" class="nav-link">Services</a>
+                    <a href="#pricing" class="nav-link">Pricing</a>
+                    <a href="#booking" class="nav-link">Book Pickup</a>
+                    <a href="#about" class="nav-link">About</a>
+                    <a href="#testimonials" class="nav-link">Reviews</a>
+                    <a href="#faq" class="nav-link">FAQ</a>
+                </div>
+                <button class="hamburger" id="hamburger" type="button" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="navLinks">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Promo Banner -->
+    <div class="promo-banner">
+        <div class="promo-content">
+            <span class="promo-icon">🎉</span>
+            <span class="promo-text">🎉 Limited Time: <strong>20% OFF</strong> your first order! Use code: <strong>SLATE20</strong></span>
+            <button class="promo-close" id="promoBanner">&times;</button>
+        </div>
+    </div>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="hero-background">
+            <div class="floating-shapes">
+                <div class="shape shape-1"></div>
+                <div class="shape shape-2"></div>
+                <div class="shape shape-3"></div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-text">
+                    <h1 class="hero-title">Fresh, Fast & Reliable Laundry Services</h1>
+                    <p class="hero-subtitle">Professional washing, dry cleaning, ironing & doorstep pickup delivered with care</p>
+                    <div class="hero-buttons">
+                        <a href="#booking" class="btn btn-primary">Book Pickup Now</a>
+                        <a href="#pricing" class="btn btn-secondary">Get Instant Quote</a>
+                        <a href="https://wa.me/256700000000?text=Hello%20Clean%20Slate" target="_blank" class="btn btn-whatsapp">
+                            <i class="fab fa-whatsapp"></i>
+                            WhatsApp Us
+                        </a>
+                    </div>
+                </div>
+                <div class="hero-image">
+                    <div class="image-placeholder">
+                        <img src="image/ladies.jpg" alt="Professional Laundry Service" style="width: 100%; height: 100%; object-fit: cover; border-radius: 16px; box-shadow: 0 8px 32px rgba(0, 0, 0, 0.15);">
+                    </div>
+                </div>
+            </div>
+
+            <!-- Trust Badges -->
+            <div class="trust-badges">
+                <div class="badge">
+                    <div class="badge-icon"><i class="fas fa-clock"></i></div>
+                    <div class="badge-text">Same Day Delivery</div>
+                </div>
+                <div class="badge">
+                    <div class="badge-icon"><i class="fas fa-leaf"></i></div>
+                    <div class="badge-text">Eco-Friendly</div>
+                </div>
+                <div class="badge">
+                    <div class="badge-icon"><i class="fas fa-tshirt"></i></div>
+                    <div class="badge-text">100% Fabric Care</div>
+                </div>
+                <div class="badge">
+                    <div class="badge-icon"><i class="fas fa-tag"></i></div>
+                    <div class="badge-text">Affordable Pricing</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Our Work Speaks Gallery -->
+        <div class="container" style="margin-top: 4rem;">
+            <div class="section-header">
+                <h2>Our Work Speaks</h2>
+                <p>See the transformation with our expert care</p>
+            </div>
+            <div class="gallery-grid">
+                <div class="gallery-item">
+                    <div class="image-comparison">
+                        <div class="comparison-slider">
+                            <div class="comparison-img before-img">
+                                <img src="image/shirts.jpg" alt="Dirty clothes before cleaning" style="width: 100%; height: 100%; object-fit: cover;">
+                            </div>
+                            <div class="comparison-img after-img">
+                                <img src="image/ironed.jpg" alt="Clean fresh clothes after washing" style="width: 100%; height: 100%; object-fit: cover;">
+                            </div>
+                            <input type="range" min="0" max="100" value="50" class="comparison-range">
+                            <div class="comparison-handle"></div>
+                        </div>
+                    </div>
+                    <p class="gallery-caption">Premium Stain Removal</p>
+                </div>
+                <div class="gallery-item">
+                    <div class="gallery-image">
+                        <img src="image/ironed.jpg" alt="Expert folding of clean clothes" style="width: 100%; height: 100%; object-fit: cover;">
+                        <div style="padding: 1rem; text-align: center; font-weight: 600; color: var(--dark-gray); background: var(--light-gray);">Expert Folding</div>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <div class="gallery-image">
+                        <img src="image/ironing.jpg" alt="Professional pressing and ironing service" style="width: 100%; height: 100%; object-fit: cover;">
+                        <div style="padding: 1rem; text-align: center; font-weight: 600; color: var(--dark-gray); background: var(--light-gray);">Professional Pressing</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="services" id="services">
+        <div class="container">
+            <div class="section-header">
+                <h2>Our Services</h2>
+                <p>Professional laundry solutions tailored to your needs</p>
+            </div>
+            <div class="services-grid">
+                <div class="service-card" data-service="wash-fold">
+                    <div class="service-icon"><i class="fas fa-tshirt"></i></div>
+                    <h3>Wash & Fold</h3>
+                    <p>Professional washing with premium detergents and expert fabric care</p>
+                    <a href="#booking" class="learn-more">Learn More →</a>
+                </div>
+                <div class="service-card" data-service="dry-cleaning">
+                    <div class="service-icon"><i class="fas fa-dryer"></i></div>
+                    <h3>Dry Cleaning</h3>
+                    <p>Specialized care for delicate fabrics and formal wear</p>
+                    <a href="#booking" class="learn-more">Learn More →</a>
+                </div>
+                <div class="service-card" data-service="ironing">
+                    <div class="service-icon"><i class="fas fa-iron"></i></div>
+                    <h3>Ironing & Pressing</h3>
+                    <p>Crisp, professional pressing with attention to detail</p>
+                    <a href="#booking" class="learn-more">Learn More →</a>
+                </div>
+                <div class="service-card" data-service="stain-removal">
+                    <div class="service-icon"><i class="fas fa-tint"></i></div>
+                    <h3>Stain Removal</h3>
+                    <p>Expert treatment for stubborn stains and discoloration</p>
+                    <a href="#booking" class="learn-more">Learn More →</a>
+                </div>
+                <div class="service-card" data-service="bedding">
+                    <div class="service-icon"><i class="fas fa-bed"></i></div>
+                    <h3>Bedding & Curtains</h3>
+                    <p>Large item cleaning for bedding, curtains, and upholstery</p>
+                    <a href="#booking" class="learn-more">Learn More →</a>
+                </div>
+                <div class="service-card" data-service="shoe-cleaning">
+                    <div class="service-icon"><i class="fas fa-shoe-prints"></i></div>
+                    <h3>Shoe Cleaning</h3>
+                    <p>Professional restoration and cleaning for all footwear</p>
+                    <a href="#booking" class="learn-more">Learn More →</a>
+                </div>
+                <div class="service-card" data-service="pickup-delivery">
+                    <div class="service-icon"><i class="fas fa-truck"></i></div>
+                    <h3>Pickup & Delivery</h3>
+                    <p>Convenient doorstep service at your scheduled time</p>
+                    <a href="#booking" class="learn-more">Learn More →</a>
+                </div>
+                <div class="service-card" data-service="express-service">
+                    <div class="service-icon"><i class="fas fa-bolt"></i></div>
+                    <h3>Express Same-Day</h3>
+                    <p>Rush service for urgent laundry needs</p>
+                    <a href="#booking" class="learn-more">Learn More →</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Choose Us Section -->
+    <section class="why-choose" id="why-choose">
+        <div class="container">
+            <div class="section-header">
+                <h2>Why Choose Clean Slate?</h2>
+                <p>Experience the difference with our premium service standards</p>
+            </div>
+            <div class="features-grid">
+                <div class="feature">
+                    <div class="feature-number"><i class="fas fa-check"></i></div>
+                    <h3>Same-Day Service</h3>
+                    <p>Fast turnaround without compromising quality</p>
+                </div>
+                <div class="feature">
+                    <div class="feature-number"><i class="fas fa-check"></i></div>
+                    <h3>Eco-Friendly Products</h3>
+                    <p>Safe for your family and the environment</p>
+                </div>
+                <div class="feature">
+                    <div class="feature-number"><i class="fas fa-check"></i></div>
+                    <h3>Professional Fabric Care</h3>
+                    <p>Expert handling of all garment types</p>
+                </div>
+                <div class="feature">
+                    <div class="feature-number"><i class="fas fa-check"></i></div>
+                    <h3>Affordable Pricing</h3>
+                    <p>Premium quality at competitive rates</p>
+                </div>
+                <div class="feature">
+                    <div class="feature-number"><i class="fas fa-check"></i></div>
+                    <h3>Doorstep Pickup & Delivery</h3>
+                    <p>Convenient service right to your door</p>
+                </div>
+                <div class="feature">
+                    <div class="feature-number"><i class="fas fa-check"></i></div>
+                    <h3>24/7 Customer Support</h3>
+                    <p>Always here to help with your needs</p>
+                </div>
+                <div class="feature">
+                    <div class="feature-number"><i class="fas fa-check"></i></div>
+                    <h3>Safe Garment Handling</h3>
+                    <p>Secure storage and transportation systems</p>
+                </div>
+                <div class="feature">
+                    <div class="feature-number"><i class="fas fa-check"></i></div>
+                    <h3>Fast Turnaround</h3>
+                    <p>Quick processing without quality loss</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing Section -->
+    <section class="pricing" id="pricing">
+        <div class="container">
+            <div class="section-header">
+                <h2>Simple, Transparent Pricing</h2>
+                <p>Quality laundry service that fits your budget</p>
+            </div>
+
+            <!-- Per Item Pricing -->
+            <div class="pricing-subsection">
+                <h3>Per Item Pricing (UGX)</h3>
+                <div class="pricing-table">
+                    <div class="price-row">
+                        <span class="price-item">Shirt</span>
+                        <span class="price-value">2,500</span>
+                    </div>
+                    <div class="price-row">
+                        <span class="price-item">Trousers</span>
+                        <span class="price-value">3,000</span>
+                    </div>
+                    <div class="price-row">
+                        <span class="price-item">Suit (2 piece)</span>
+                        <span class="price-value">8,000</span>
+                    </div>
+                    <div class="price-row">
+                        <span class="price-item">Blanket</span>
+                        <span class="price-value">5,000</span>
+                    </div>
+                    <div class="price-row">
+                        <span class="price-item">Curtains (per meter)</span>
+                        <span class="price-value">2,000</span>
+                    </div>
+                    <div class="price-row">
+                        <span class="price-item">Shoes</span>
+                        <span class="price-value">4,000</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Subscription Packages -->
+            <div class="pricing-subsection">
+                <h3>Premium Subscription Plans</h3>
+                <div class="packages-grid">
+                    <div class="package-card">
+                        <div class="package-header">
+                            <h4>Weekly Home</h4>
+                            <p class="package-subtitle">Perfect for individuals</p>
+                        </div>
+                        <div class="package-price">
+                            <span class="price-amount">75,000</span>
+                            <span class="price-period">/week</span>
+                        </div>
+                        <ul class="package-features">
+                            <li><i class="fas fa-check"></i> Up to 10 items weekly</li>
+                            <li><i class="fas fa-check"></i> Free pickup & delivery</li>
+                            <li><i class="fas fa-check"></i> Standard wash & fold</li>
+                            <li><i class="fas fa-check"></i> Next day delivery</li>
+                        </ul>
+                        <button class="btn btn-secondary btn-block">Subscribe Now</button>
+                    </div>
+
+                    <div class="package-card featured">
+                        <div class="popular-badge">Most Popular</div>
+                        <div class="package-header">
+                            <h4>Family Care</h4>
+                            <p class="package-subtitle">For households</p>
+                        </div>
+                        <div class="package-price">
+                            <span class="price-amount">180,000</span>
+                            <span class="price-period">/month</span>
+                        </div>
+                        <ul class="package-features">
+                            <li><i class="fas fa-check"></i> Unlimited items monthly</li>
+                            <li><i class="fas fa-check"></i> Twice weekly pickup</li>
+                            <li><i class="fas fa-check"></i> Wash, dry & fold</li>
+                            <li><i class="fas fa-check"></i> Priority support</li>
+                            <li><i class="fas fa-check"></i> 15% discount on extras</li>
+                        </ul>
+                        <button class="btn btn-primary btn-block">Subscribe Now</button>
+                    </div>
+
+                    <div class="package-card">
+                        <div class="package-header">
+                            <h4>Hotel/Airbnb</h4>
+                            <p class="package-subtitle">Bulk linen management</p>
+                        </div>
+                        <div class="package-price">
+                            <span class="price-amount">Custom</span>
+                            <span class="price-period">Quote</span>
+                        </div>
+                        <ul class="package-features">
+                            <li><i class="fas fa-check"></i> Bulk processing capacity</li>
+                            <li><i class="fas fa-check"></i> Daily/weekly schedule</li>
+                            <li><i class="fas fa-check"></i> Priority service</li>
+                            <li><i class="fas fa-check"></i> Dedicated contact person</li>
+                        </ul>
+                        <button class="btn btn-secondary btn-block">Get Quote</button>
+                    </div>
+
+                    <div class="package-card">
+                        <div class="package-header">
+                            <h4>Corporate Plan</h4>
+                            <p class="package-subtitle">For businesses</p>
+                        </div>
+                        <div class="package-price">
+                            <span class="price-amount">Custom</span>
+                            <span class="price-period">Quote</span>
+                        </div>
+                        <ul class="package-features">
+                            <li><i class="fas fa-check"></i> Employee uniforms</li>
+                            <li><i class="fas fa-check"></i> Flexible scheduling</li>
+                            <li><i class="fas fa-check"></i> Volume discounts</li>
+                            <li><i class="fas fa-check"></i> Dedicated support</li>
+                        </ul>
+                        <button class="btn btn-secondary btn-block">Get Quote</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Order Tracking Section -->
+    <section class="tracking" id="tracking">
+        <div class="container">
+            <div class="section-header">
+                <h2>Track Your Order</h2>
+                <p>Monitor your laundry in real-time</p>
+            </div>
+            <div class="tracking-container">
+                <div class="tracking-input-wrapper">
+                    <input type="text" id="trackingInput" class="tracking-input" placeholder="Enter your order number" required>
+                    <button class="btn btn-primary" id="trackButton">Track Order</button>
+                </div>
+                <div class="tracking-timeline" id="trackingTimeline" style="display:none;">
+                    <div class="timeline-step completed">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-content">
+                            <h4>Pickup Scheduled</h4>
+                            <p>May 8, 2:30 PM</p>
+                        </div>
+                    </div>
+                    <div class="timeline-step completed">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-content">
+                            <h4>Collected</h4>
+                            <p>May 8, 3:15 PM</p>
+                        </div>
+                    </div>
+                    <div class="timeline-step completed">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-content">
+                            <h4>Washing</h4>
+                            <p>May 8, 4:00 PM</p>
+                        </div>
+                    </div>
+                    <div class="timeline-step completed">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-content">
+                            <h4>Drying</h4>
+                            <p>May 8, 6:30 PM</p>
+                        </div>
+                    </div>
+                    <div class="timeline-step active">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-content">
+                            <h4>Ready for Delivery</h4>
+                            <p>May 9, 10:00 AM</p>
+                        </div>
+                    </div>
+                    <div class="timeline-step">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-content">
+                            <h4>Out for Delivery</h4>
+                            <p>Pending</p>
+                        </div>
+                    </div>
+                </div>
+                <p class="tracking-help">Use a demo order number: <strong>CS-2024-001</strong></p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Booking Form Section -->
+    <section class="booking" id="booking">
+        <div class="container">
+            <div class="section-header">
+                <h2>Schedule Your Pickup</h2>
+                <p>Easy online booking for your laundry needs</p>
+            </div>
+            <div class="booking-form-wrapper">
+                <form id="bookingForm" class="booking-form">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="fullName">Full Name *</label>
+                            <input type="text" id="fullName" name="fullName" required placeholder="Your name">
+                        </div>
+                        <div class="form-group">
+                            <label for="phone">Phone Number *</label>
+                            <input type="tel" id="phone" name="phone" required placeholder="+256 700 000000">
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="email">Email Address</label>
+                            <input type="email" id="email" name="email" placeholder="your@email.com">
+                        </div>
+                        <div class="form-group">
+                            <label for="address">Pickup Address *</label>
+                            <input type="text" id="address" name="address" required placeholder="Your address in Kampala">
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="service">Select Service *</label>
+                            <select id="service" name="service" required>
+                                <option value="">Choose a service</option>
+                                <option value="wash-fold">Wash & Fold</option>
+                                <option value="dry-cleaning">Dry Cleaning</option>
+                                <option value="ironing">Ironing & Pressing</option>
+                                <option value="stain-removal">Stain Removal</option>
+                                <option value="bedding">Bedding & Curtains</option>
+                                <option value="shoe-cleaning">Shoe Cleaning</option>
+                                <option value="express">Express Same-Day</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="pickupDate">Pickup Date *</label>
+                            <input type="date" id="pickupDate" name="pickupDate" required>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="pickupTime">Preferred Time *</label>
+                            <select id="pickupTime" name="pickupTime" required>
+                                <option value="">Select time</option>
+                                <option value="08:00">8:00 AM - 10:00 AM</option>
+                                <option value="10:00">10:00 AM - 12:00 PM</option>
+                                <option value="14:00">2:00 PM - 4:00 PM</option>
+                                <option value="16:00">4:00 PM - 6:00 PM</option>
+                            </select>
+                        </div>
+                        <div class="form-group full-width">
+                            <label for="notes">Special Instructions</label>
+                            <textarea id="notes" name="notes" rows="3" placeholder="Any special requests or delicate items?"></textarea>
+                        </div>
+                    </div>
+                    <div class="form-actions">
+                        <button type="submit" class="btn btn-primary">Schedule Pickup</button>
+                        <button type="button" class="btn btn-secondary" id="quoteBtn">Get Quote Instead</button>
+                    </div>
+                    <p class="form-notice">✓ Your information is secure and never shared</p>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="testimonials" id="testimonials">
+        <div class="container">
+            <div class="section-header">
+                <h2>What Our Customers Say</h2>
+                <p>Trusted by hundreds of satisfied customers in Kampala</p>
+            </div>
+            <div class="testimonials-carousel" id="testimonialsCarousel">
+                <div class="testimonial-card">
+                    <div class="stars">★★★★★</div>
+                    <p class="testimonial-text">"Best laundry service in Kampala. Fast pickup and clothes always return perfectly cleaned and folded. Highly recommended!"</p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">JK</div>
+                        <div class="author-info">
+                            <h4>James Katumba</h4>
+                            <p>Business Professional</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="stars">★★★★★</div>
+                    <p class="testimonial-text">"I've been using Clean Slate for 6 months. Their service is consistent, affordable, and they really care about fabric care."</p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">AC</div>
+                        <div class="author-info">
+                            <h4>Angela Chibwe</h4>
+                            <p>Mother of Two</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="stars">★★★★★</div>
+                    <p class="testimonial-text">"The pickup and delivery service is so convenient. I don't have to worry about my laundry anymore!"</p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">RM</div>
+                        <div class="author-info">
+                            <h4>Robert Mutebi</h4>
+                            <p>Corporate Client</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="stars">★★★★★</div>
+                    <p class="testimonial-text">"They fixed a stain on my favorite shirt that I thought was permanent. Absolutely incredible work!"</p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">NM</div>
+                        <div class="author-info">
+                            <h4>Nakayima Maria</h4>
+                            <p>Fashion Designer</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="stars">★★★★★</div>
+                    <p class="testimonial-text">"Using them for our Airbnb linens. Professional, reliable, and they handle bulk orders perfectly."</p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">DK</div>
+                        <div class="author-info">
+                            <h4>David Katende</h4>
+                            <p>Airbnb Host</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="stars">★★★★★</div>
+                    <p class="testimonial-text">"Excellent customer service and they always deliver on time. My go-to laundry service!"</p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">FC</div>
+                        <div class="author-info">
+                            <h4>Fatima Cerrah</h4>
+                            <p>Hotel Manager</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="carousel-controls">
+                <button class="carousel-btn prev" id="prevTestimonial">❮</button>
+                <button class="carousel-btn next" id="nextTestimonial">❯</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about" id="about">
+        <div class="container">
+            <div class="about-content">
+                <div class="about-text">
+                    <h2>About Clean Slate Laundry</h2>
+                    <h3>Your Trusted Laundry Partner in Kampala</h3>
+                    <p>Founded in 2018, Clean Slate Laundry has been serving Kampala with professional, reliable, and affordable laundry services. We're committed to making laundry care simple and stress-free.</p>
+                    <div class="about-values">
+                        <div class="value">
+                            <strong>Our Mission</strong>
+                            <p>To provide premium laundry services that respect your garments and your time</p>
+                        </div>
+                        <div class="value">
+                            <strong>Our Vision</strong>
+                            <p>To be Kampala's most trusted laundry service brand</p>
+                        </div>
+                        <div class="value">
+                            <strong>Our Promise</strong>
+                            <p>Every garment receives expert care with eco-friendly methods</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="about-image">
+                    <img src="image/ladies.jpg" alt="Professional laundry team at work" style="width: 100%; height: 100%; object-fit: cover; border-radius: 16px;">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="faq" id="faq">
+        <div class="container">
+            <div class="section-header">
+                <h2>Frequently Asked Questions</h2>
+                <p>Find answers to common questions about our services</p>
+            </div>
+            <div class="faq-list">
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <span>How long does laundry take?</span>
+                        <span class="faq-icon">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Standard laundry typically takes 24-48 hours from pickup to delivery. We also offer express same-day service for an additional fee if you need it urgently.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <span>Do you offer same-day service?</span>
+                        <span class="faq-icon">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Yes! We offer express same-day service for orders placed before 10 AM. Delivery would be the same evening. Additional charges apply for rush service.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <span>Which areas do you serve?</span>
+                        <span class="faq-icon">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>We currently serve Kampala Central, Ntinda, Naalya, Bukoto, Kisaasi, Kololo, Naguru, Muyenga, and surrounding areas. We're expanding to more neighborhoods soon. Check our service map or contact us to confirm your area.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <span>What payment methods do you accept?</span>
+                        <span class="faq-icon">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>We accept MTN Mobile Money, Airtel Money, bank transfers, and cash payment. You can pay online during booking or in cash at pickup/delivery.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <span>What if my garment is delicate?</span>
+                        <span class="faq-icon">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>We handle all fabric types with expert care. Delicate items like silk, wool, and designer pieces receive specialized dry cleaning. Mention special care needs in the booking form.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <span>How does pickup work?</span>
+                        <span class="faq-icon">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Book your pickup online or via WhatsApp. Our driver will arrive during your selected time window. Have your laundry ready at your door or gate. You'll receive an SMS notification when the driver is nearby.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Service Areas Map -->
+    <section class="service-areas">
+        <div class="container">
+            <div class="section-header">
+                <h2>Service Areas in Kampala</h2>
+                <p>We're expanding daily to serve more neighborhoods</p>
+            </div>
+            <div class="areas-grid">
+                <div class="area-item served">
+                    <div class="area-icon"><i class="fas fa-check"></i></div>
+                    <h4>Kampala Central</h4>
+                    <p>Downtown & CBD</p>
+                </div>
+                <div class="area-item served">
+                    <div class="area-icon"><i class="fas fa-check"></i></div>
+                    <h4>Ntinda</h4>
+                    <p>Eastern Kampala</p>
+                </div>
+                <div class="area-item served">
+                    <div class="area-icon"><i class="fas fa-check"></i></div>
+                    <h4>Naalya</h4>
+                    <p>Southeast Zone</p>
+                </div>
+                <div class="area-item served">
+                    <div class="area-icon"><i class="fas fa-check"></i></div>
+                    <h4>Bukoto</h4>
+                    <p>North Central</p>
+                </div>
+                <div class="area-item served">
+                    <div class="area-icon"><i class="fas fa-check"></i></div>
+                    <h4>Kisaasi</h4>
+                    <p>West Zone</p>
+                </div>
+                <div class="area-item served">
+                    <div class="area-icon"><i class="fas fa-check"></i></div>
+                    <h4>Kololo</h4>
+                    <p>Northern Hills</p>
+                </div>
+                <div class="area-item served">
+                    <div class="area-icon"><i class="fas fa-check"></i></div>
+                    <h4>Naguru</h4>
+                    <p>East Side</p>
+                </div>
+                <div class="area-item served">
+                    <div class="area-icon"><i class="fas fa-check"></i></div>
+                    <h4>Muyenga</h4>
+                    <p>South Hills</p>
+                </div>
+            </div>
+            <p class="expanding-text">We're constantly expanding. Contact us to check if your area is covered!</p>
+        </div>
+    </section>
+
+    <!-- Payment Methods -->
+    <section class="payments">
+        <div class="container">
+            <div class="section-header">
+                <h2>Secure Payment Options</h2>
+                <p>Easy, safe, and multiple payment methods</p>
+            </div>
+            <div class="payment-methods">
+                <div class="payment-method">
+                    <div class="payment-icon">📱</div>
+                    <h4>MTN Mobile Money</h4>
+                    <p>Quick & convenient mobile payment</p>
+                </div>
+                <div class="payment-method">
+                    <div class="payment-icon">💳</div>
+                    <h4>Airtel Money</h4>
+                    <p>Fast airtime-based payment</p>
+                </div>
+                <div class="payment-method">
+                    <div class="payment-icon">🏦</div>
+                    <h4>Bank Transfer</h4>
+                    <p>Direct bank account payment</p>
+                </div>
+                <div class="payment-method">
+                    <div class="payment-icon">💵</div>
+                    <h4>Cash Payment</h4>
+                    <p>Pay on pickup or delivery</p>
+                </div>
+            </div>
+            <div class="security-badge">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+                </svg>
+                <span>Your transactions are 100% secure and encrypted</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact CTA -->
+    <section class="contact-cta">
+        <div class="container">
+            <h2>Ready to Simplify Your Laundry?</h2>
+            <p>Get started with Clean Slate Laundry today</p>
+            <div class="contact-buttons">
+                <a href="#booking" class="btn btn-primary btn-large">Book Pickup Now</a>
+                <a href="https://wa.me/256700000000?text=Hello%20Clean%20Slate%20Laundry" target="_blank" class="btn btn-secondary btn-large">Chat on WhatsApp</a>
+                <a href="tel:+256700000000" class="btn btn-outline btn-large">Call Us</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-section">
+                    <h4>Clean Slate Laundry</h4>
+                    <p>Your trusted laundry partner in Kampala</p>
+                    <div class="social-links">
+                        <a href="#" title="Instagram" target="_blank">📷 Instagram</a>
+                        <a href="#" title="Facebook" target="_blank">👍 Facebook</a>
+                        <a href="#" title="TikTok" target="_blank">🎵 TikTok</a>
+                        <a href="https://wa.me/256700000000" title="WhatsApp" target="_blank">💬 WhatsApp</a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="#services">Services</a></li>
+                        <li><a href="#pricing">Pricing</a></li>
+                        <li><a href="#booking">Book Pickup</a></li>
+                        <li><a href="#about">About Us</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Operating Hours</h4>
+                    <p>Monday - Friday: 7:00 AM - 7:00 PM</p>
+                    <p>Saturday: 8:00 AM - 4:00 PM</p>
+                    <p>Sunday: Closed</p>
+                    <p><strong>Emergency Service: 24/7 Available</strong></p>
+                </div>
+                <div class="footer-section">
+                    <h4>Contact Info</h4>
+                    <p>📞 +256 700 000 000</p>
+                    <p>✉️ info@cleanslate.ug</p>
+                    <p>📍 Kampala, Uganda</p>
+                    <div class="newsletter-signup">
+                        <input type="email" placeholder="Your email" class="newsletter-input">
+                        <button class="btn btn-primary btn-sm">Subscribe</button>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Clean Slate Laundry. All rights reserved.</p>
+                <div class="footer-links">
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms of Service</a>
+                    <a href="#">Cookie Policy</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- WhatsApp Floating Button -->
+    <a href="https://wa.me/256700000000?text=Hello%20Clean%20Slate%20Laundry!%20I%20need%20laundry%20services." target="_blank" class="whatsapp-button" title="Chat with us on WhatsApp">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.67-.51-.173-.008-.371 0-.57 0-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.076 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421-7.403h-.004a9.87 9.87 0 00-4.255.949l-.305.149-3.171-.833.847 3.48-.224.355a9.758 9.758 0 00-1.569 5.184c0 5.396 4.409 9.783 9.823 9.783 2.642 0 5.122-.994 6.986-2.784 1.863-1.791 2.89-4.188 2.89-6.727-.001-5.395-4.41-9.783-9.823-9.783"/>
+        </svg>
+    </a>
+
+    <script src="script.js"></script>
+</body>
+</html>
