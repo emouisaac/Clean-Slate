@@ -377,6 +377,119 @@ p {
     animation: float 3s ease-in-out infinite;
 }
 
+.hero-slider {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    border-radius: 16px;
+    overflow: hidden;
+    background: linear-gradient(160deg, rgba(0, 102, 204, 0.16), rgba(0, 163, 224, 0.08));
+    isolation: isolate;
+}
+
+.hero-slide {
+    position: absolute;
+    inset: 0;
+    opacity: 0;
+    transform: scale(1.08);
+    transition: opacity 0.9s ease, transform 1.2s ease;
+}
+
+.hero-slide.active {
+    opacity: 1;
+    transform: scale(1);
+    z-index: 1;
+}
+
+.hero-slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: saturate(1.03) contrast(1.02);
+}
+
+.hero-slider::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background:
+        radial-gradient(circle at top right, rgba(255, 255, 255, 0.35), transparent 32%),
+        linear-gradient(180deg, rgba(7, 25, 49, 0.06) 0%, rgba(7, 25, 49, 0.3) 100%);
+    z-index: 2;
+    pointer-events: none;
+}
+
+.hero-slider-overlay {
+    position: absolute;
+    right: 18px;
+    bottom: 18px;
+    left: 18px;
+    z-index: 3;
+    padding: 1rem 1.1rem;
+    border-radius: 14px;
+    background: rgba(8, 28, 53, 0.48);
+    backdrop-filter: blur(10px);
+    color: var(--white);
+    box-shadow: 0 12px 28px rgba(0, 0, 0, 0.18);
+}
+
+.hero-slider-badge {
+    display: inline-flex;
+    align-items: center;
+    padding: 0.35rem 0.7rem;
+    margin-bottom: 0.65rem;
+    border-radius: 999px;
+    background: rgba(255, 255, 255, 0.18);
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+}
+
+.hero-slider-caption {
+    margin: 0;
+    color: rgba(255, 255, 255, 0.96);
+    font-size: 1rem;
+    font-weight: 600;
+    line-height: 1.45;
+    min-height: 2.9em;
+    transition: opacity 0.35s ease, transform 0.35s ease;
+}
+
+.hero-slider-caption.is-changing {
+    opacity: 0;
+    transform: translateY(10px);
+}
+
+.hero-slider-dots {
+    position: absolute;
+    top: 18px;
+    left: 18px;
+    z-index: 3;
+    display: flex;
+    gap: 0.55rem;
+}
+
+.hero-slider-dot {
+    width: 34px;
+    height: 5px;
+    padding: 0;
+    border: none;
+    border-radius: 999px;
+    background: rgba(255, 255, 255, 0.38);
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.hero-slider-dot.active {
+    background: var(--white);
+    transform: scaleX(1.08);
+}
+
+.hero-slider-dot:hover {
+    background: rgba(255, 255, 255, 0.82);
+}
+
 /* Trust Badges */
 .trust-badges {
     display: grid;
@@ -1589,9 +1702,25 @@ section:nth-child(even) {
     .contact-buttons .btn {
         width: 100%;
     }
+
+    .hero-slider-caption {
+        min-height: auto;
+    }
 }
 
 @media (max-width: 768px) {
+    .hero-buttons {
+        flex-wrap: nowrap;
+        gap: 0.5rem;
+    }
+
+    .hero-buttons .btn {
+        flex: 1 1 0;
+        min-width: 0;
+        padding: 10px 12px;
+        font-size: 0.8rem;
+    }
+
     .nav-links {
         display: none;
         position: absolute;
@@ -1627,6 +1756,28 @@ section:nth-child(even) {
 
     h3 {
         font-size: 1.4rem;
+    }
+
+    .hero-slider-overlay {
+        right: 14px;
+        bottom: 14px;
+        left: 14px;
+        padding: 0.85rem 0.95rem;
+    }
+
+    .hero-slider-caption {
+        font-size: 0.9rem;
+        line-height: 1.35;
+    }
+
+    .hero-slider-dots {
+        top: 14px;
+        left: 14px;
+        gap: 0.45rem;
+    }
+
+    .hero-slider-dot {
+        width: 26px;
     }
 
     section {
@@ -1787,7 +1938,43 @@ section:nth-child(even) {
     }
 
     .hero-buttons {
+        flex-wrap: nowrap;
         gap: 0.5rem;
+    }
+
+    .hero-buttons .btn {
+        padding: 9px 8px;
+        font-size: 0.72rem;
+        letter-spacing: -0.01em;
+    }
+
+    .hero-buttons .btn i {
+        font-size: 0.8rem;
+    }
+
+    .image-placeholder {
+        padding: 14px;
+    }
+
+    .hero-slider-overlay {
+        right: 10px;
+        bottom: 10px;
+        left: 10px;
+        padding: 0.75rem 0.85rem;
+    }
+
+    .hero-slider-badge {
+        margin-bottom: 0.45rem;
+        font-size: 0.64rem;
+    }
+
+    .hero-slider-caption {
+        font-size: 0.82rem;
+    }
+
+    .hero-slider-dot {
+        width: 20px;
+        height: 4px;
     }
 
     .trust-badges {

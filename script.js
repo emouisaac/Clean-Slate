@@ -170,7 +170,7 @@ if (quoteBtn) {
         const service = form.service.value;
         
         if (phone && service) {
-            const whatsappMsg = `Hello Clean Slate! I'd like to get a quote for ${service} service. My number is ${phone}`;
+            const whatsappMsg = 'Request for laundry services';
             window.open(`https://wa.me/256787673188?text=${encodeURIComponent(whatsappMsg)}`, '_blank');
         } else {
             alert('Please fill in phone number and service type first');
@@ -285,6 +285,64 @@ if (prevTestimonialBtn) {
 // Initialize testimonials carousel
 window.addEventListener('resize', showTestimonials);
 showTestimonials();
+
+// Hero image slider
+const heroSlides = document.querySelectorAll('.hero-slide');
+const heroSliderDots = document.querySelectorAll('.hero-slider-dot');
+const heroSliderCaption = document.getElementById('heroSliderCaption');
+let currentHeroSlide = 0;
+let heroSliderInterval;
+
+function setHeroSlide(index) {
+    if (!heroSlides.length || !heroSliderCaption) {
+        return;
+    }
+
+    currentHeroSlide = index;
+
+    heroSlides.forEach((slide, slideIndex) => {
+        slide.classList.toggle('active', slideIndex === index);
+    });
+
+    heroSliderDots.forEach((dot, dotIndex) => {
+        dot.classList.toggle('active', dotIndex === index);
+    });
+
+    heroSliderCaption.classList.add('is-changing');
+
+    setTimeout(() => {
+        heroSliderCaption.textContent = heroSlides[index].dataset.caption || '';
+        heroSliderCaption.classList.remove('is-changing');
+    }, 180);
+}
+
+function startHeroSlider() {
+    if (heroSlides.length <= 1) {
+        return;
+    }
+
+    clearInterval(heroSliderInterval);
+    heroSliderInterval = setInterval(() => {
+        const nextIndex = (currentHeroSlide + 1) % heroSlides.length;
+        setHeroSlide(nextIndex);
+    }, 3800);
+}
+
+if (heroSlides.length) {
+    heroSliderDots.forEach((dot, index) => {
+        dot.addEventListener('click', function () {
+            setHeroSlide(index);
+            startHeroSlider();
+        });
+    });
+
+    const heroSlider = document.getElementById('heroSlider');
+    heroSlider?.addEventListener('mouseenter', () => clearInterval(heroSliderInterval));
+    heroSlider?.addEventListener('mouseleave', startHeroSlider);
+
+    setHeroSlide(0);
+    startHeroSlider();
+}
 
 // Smooth scroll is now handled by the section navigation system above
 // Removed general anchor link smooth scrolling since we have custom navigation
