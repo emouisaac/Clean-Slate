@@ -1,6 +1,7 @@
 const http = require('http');
 const fs = require('fs');
 const path = require('path');
+const os = require('os');
 
 const PORT = process.env.PORT || 3000;
 const ROOT_DIR = __dirname;
@@ -20,6 +21,21 @@ const MIME_TYPES = {
     '.ico': 'image/x-icon',
     '.txt': 'text/plain; charset=UTF-8'
 };
+
+function getLocalUrls(port) {
+    const interfaces = os.networkInterfaces();
+    const urls = ['http://localhost:' + port];
+
+    Object.values(interfaces).forEach(entries => {
+        (entries || []).forEach(entry => {
+            if (entry.family === 'IPv4' && !entry.internal) {
+                urls.push(`http://${entry.address}:${port}`);
+            }
+        });
+    });
+
+    return [...new Set(urls)];
+}
 
 function sendFile(filePath, response) {
     fs.readFile(filePath, (error, content) => {
@@ -45,9 +61,14 @@ function sendFile(filePath, response) {
 }
 
 function resolvePath(urlPath) {
-    const safePath = path.normalize(urlPath).replace(/^(\.\.[\\/])+/, '');
+    const decodedPath = decodeURIComponent(urlPath);
+    const safePath = path.normalize(decodedPath).replace(/^(\.\.[\\/])+/, '');
     const requestedPath = safePath === '/' ? '/index.html' : safePath;
     return path.join(ROOT_DIR, requestedPath);
+}
+
+function isAssetRequest(urlPath) {
+    return path.extname(urlPath) !== '';
 }
 
 const server = http.createServer((request, response) => {
@@ -65,6 +86,12 @@ const server = http.createServer((request, response) => {
                 return;
             }
 
+            if (isAssetRequest(requestUrl.pathname)) {
+                response.writeHead(404, { 'Content-Type': 'text/plain; charset=UTF-8' });
+                response.end('404 Not Found');
+                return;
+            }
+
             // Fallback for client-side navigation and unmatched routes.
             sendFile(INDEX_FILE, response);
         });
@@ -72,5 +99,9 @@ const server = http.createServer((request, response) => {
 });
 
 server.listen(PORT, () => {
-    console.log(`Clean Slate server running on port ${PORT}`);
+    const urls = getLocalUrls(PORT);
+    console.log('Clean Slate server running at:');
+    urls.forEach(url => {
+        console.log(`  ${url}`);
+    });
 });
