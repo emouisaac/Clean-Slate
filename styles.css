@@ -246,13 +246,29 @@ p {
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 12px;
     position: relative;
 }
 
-.promo-icon {
-    font-size: 1.2rem;
-    animation: bounce 2s infinite;
+.promo-slider-window {
+    width: min(100%, 760px);
+    overflow: hidden;
+    padding-right: 44px;
+}
+
+.promo-slider-track {
+    display: flex;
+    transition: transform 0.7s ease;
+    will-change: transform;
+}
+
+.promo-text {
+    flex: 0 0 100%;
+    text-align: center;
+    line-height: 1.5;
+}
+
+.promo-text strong {
+    color: var(--warning-color);
 }
 
 .promo-close {
@@ -1909,6 +1925,10 @@ section:nth-child(even) {
     .promo-content {
         font-size: 0.85rem;
         padding: 0 10px;
+    }
+
+    .promo-slider-window {
+        padding-right: 34px;
     }
 
     .promo-close {

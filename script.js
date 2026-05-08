@@ -141,6 +141,27 @@ if (promo) {
     });
 }
 
+// Promo Banner Slider
+const promoSliderTrack = document.getElementById('promoSliderTrack');
+const promoSlides = promoSliderTrack?.querySelectorAll('.promo-text') || [];
+let currentPromoSlide = 0;
+
+function setPromoSlide(index) {
+    if (!promoSliderTrack || promoSlides.length <= 1) {
+        return;
+    }
+
+    currentPromoSlide = index;
+    promoSliderTrack.style.transform = `translateX(-${index * 100}%)`;
+}
+
+if (promoSliderTrack && promoSlides.length > 1) {
+    setInterval(() => {
+        const nextIndex = (currentPromoSlide + 1) % promoSlides.length;
+        setPromoSlide(nextIndex);
+    }, 3500);
+}
+
 // Booking Form Submission
 const bookingForm = document.getElementById('bookingForm');
 if (bookingForm) {
